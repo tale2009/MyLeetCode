@@ -4,7 +4,7 @@ import java.util.List;
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head=new ListNode(0);
-        ListNode currentNpode=head;
+        ListNode currentNpode=head;//链表操作的临时字段
         int over=0;//10进制计数
         while(true)
         {
@@ -15,6 +15,7 @@ public class AddTwoNumbers {
                 NodeIntValue1=l1.val;
             if(l2!=null)
                 NodeIntValue2=l2.val;
+            //over代表着上一index的计算是否满10进1
             currentNpode.val=(NodeIntValue1+NodeIntValue2+over)%10;
             over=(NodeIntValue1+NodeIntValue2+over)/10;
             if(l1!=null)
@@ -26,8 +27,8 @@ public class AddTwoNumbers {
                     currentNpode.next=new ListNode(1);
                 break;
             }
-            currentNpode.next=new ListNode(0);
-            currentNpode=currentNpode.next;
+            currentNpode.next=new ListNode(0);//建立下一个链表点
+            currentNpode=currentNpode.next;//设定下次操作链点
         }
         return head;
     }
