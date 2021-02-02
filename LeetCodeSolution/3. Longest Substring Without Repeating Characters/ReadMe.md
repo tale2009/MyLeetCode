@@ -30,10 +30,10 @@
 ---
 本题的解答最优方法就是滑动窗口算法，它使该题的的时间复杂度为O(n)，如下图中最长的连续的绿色段（窗口）的长度则为题解。
 
-<center>
+<div align='center'>
 
 ![](https://github.com/tale2009/MyLeetCode/blob/master/LeetCodeSolution/3.%20Longest%20Substring%20Without%20Repeating%20Characters/1.png?raw=true)
-</center>
+</div>
 
 以下是本题利用滑动窗口算法写出的题解
 ```
@@ -53,15 +53,15 @@
 （1）每当content.containsKey(s.charAt(i))找到重复数据的时候我们就要调整窗口的位置，这里会有两种情况
 
 1.当重复数据坐标大于窗口左侧下标的时候，那么窗口下标就移动到该下标的下一格位置即content.get(s.charAt(i))+1。
-<center>
+<div align='center'>
 
 ![](https://github.com/tale2009/MyLeetCode/blob/master/LeetCodeSolution/3.%20Longest%20Substring%20Without%20Repeating%20Characters/2.png?raw=true)
-</center>
+</div>
 2.当重复数据的坐标位置小于窗口当前左标下标的时候则不移动下标位置。
-<center>
+<div align='center'>
 
 ![](https://github.com/tale2009/MyLeetCode/blob/master/LeetCodeSolution/3.%20Longest%20Substring%20Without%20Repeating%20Characters/3.png?raw=true)
-</center>
+</div>
 
 （2）strMap.put(s.charAt(i),i)即记录字符位置，帮助判断窗口左标是否移动。
 
